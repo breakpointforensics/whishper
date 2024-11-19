@@ -29,7 +29,6 @@ services:
     tty: true
     environment:
       LT_DISABLE_WEB_UI: True
-      LT_LOAD_ONLY: ${LT_LOAD_ONLY:-en,fr,es}
       LT_UPDATE_MODELS: True
     expose:
       - 5000
@@ -47,7 +46,7 @@ services:
 
   whishper:
     pull_policy: always
-    image: pluja/whishper:${WHISHPER_VERSION:-latest-gpu}
+    image: breakpointforensics/whishper:${WHISHPER_VERSION:-latest-gpu}
     env_file:
       - .env
     volumes:
